@@ -1,0 +1,50 @@
+{
+  "name": "emotion-minireset",
+  "version": "1.0.0",
+  "description": "Minireset file for emotion JSS library",
+  "main": "dist/emotion-minireset.cjs.js",
+  "module": "dist/emotion-minireset.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ombori/emotion-minireset.git"
+  },
+  "keywords": [
+    "emotion",
+    "minireset",
+    "reset",
+    "jss",
+    "css",
+    "styles",
+    "import",
+    "components"
+  ],
+  "author": "Gustaf Zetterlund <gustaf@ombori.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ombori/emotion-minireset/issues"
+  },
+  "homepage": "https://github.com/ombori/emotion-minireset#readme",
+  "scripts": {
+    "prebuild": "rimraf dist && mkdirp dist",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "cross-env MODULES=false babel index.js --out-file dist/emotion-minireset.esm.js --source-maps",
+    "build:cjs": "cross-env MODULES=true babel index.js --out-file dist/emotion-minireset.cjs.js --source-maps",
+    "prepublish": "yarn build",
+    "postversion": "git push origin master --tags && yarn publish"
+  },
+  "peerDependencies": {
+    "@emotion/core": ">=10.0.0"
+  },
+  "dependencies": {
+    "minireset.css": "^0.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-plugin-inline-import": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.3"
+  }
+}
