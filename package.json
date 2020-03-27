@@ -1,6 +1,6 @@
 {
   "name": "emotion-minireset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minireset file for emotion JSS library",
   "main": "dist/emotion-minireset.cjs.js",
   "module": "dist/emotion-minireset.esm.js",
@@ -32,19 +32,17 @@
     "prepublish": "yarn build",
     "postversion": "git push origin master --tags && yarn publish"
   },
-  "peerDependencies": {
-    "@emotion/core": ">=10.0.0"
-  },
   "dependencies": {
-    "minireset.css": "^0.0.4"
+    "@emotion/core": ">=10.0.0",
+    "minireset.css": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "babel-plugin-inline-import": "^3.0.0",
-    "cross-env": "^5.2.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.3"
+    "cross-env": "^7.0.2",
+    "mkdirp": "^1.0.3",
+    "rimraf": "^3.0.2"
   }
 }
